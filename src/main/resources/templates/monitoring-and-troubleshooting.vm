@@ -7,7 +7,7 @@
 </head>
     <body>
         <h2> ~~ Jira issue creation through API ~~ </h2><br>
-        <p> Note: Please create a new project with name of 'IN' and create a new user with the name 'admin' before
+        <p><FONT COLOR=RED> Note: <FONT COLOR=BLACK>Please create a new project with name of <b>'IN'</b> and create a new user with the name <b>'admin'</b> before
         clicking the 'Create an Issue' button </p> <br>
         <div>
           <input class="aui-button button" type="button" name="checkSuccess" value="Create an Issue" id="checkSuccess" title="Create an Issue" />
