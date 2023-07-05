@@ -1,0 +1,58 @@
+<atlassian-plugin
+	key="com.demo.jira.plugin.synchronize.demo-jira-flaws-synchronizer"
+	name="Integration for JIRA" plugins-version="2">
+	<plugin-info>
+		<description>The Integration for JIRA.
+		</description>
+		<vendor name=", Inc." url="" />
+		<param name="atlassian-data-center-compatible">true</param>
+		<param name="atlassian-data-center-status">compatible</param>
+		<version>1.0.0</version>
+	</plugin-info>
+	<resource name="flaw-synchronizer" type="i18n"
+		location="properties/flaw-synchronizer" />
+
+<!--	/////////////-->
+    <web-resource key="monitoringAndTroubleshootingResources" name="Monitoring and Troubleshooting Resources">
+		<resource type="download" name="monitoring-and-troubleshooting_3230.js" location="public/javascripts/monitoring-and-troubleshooting_3230.js" />
+		<context>monitoringAndTroubleshootingResources-Context</context>
+	</web-resource>
+	<!--	/////////////-->
+	<web-section key="flaw-sync-web-section" name="Integration"
+		i18n-name-key="demo.flaw.synchronizer.name" location="admin_plugins_menu"
+		weight="105">
+		<label key="demo.flaw.synchronizer.server.desc" />
+	</web-section>
+
+	<web-item key="flaw-sync-monitoring-and-troubleshooting-webitem" name="Monitoring/Troubleshooting"
+		section="admin_plugins_menu/flaw-sync-web-section" system="true"
+		weight="30">
+		<label key="demo.flaw.synchronizer.monitoringAndTroubleshooting.desc" />
+		<link linkId="ConfigureJMUWebItem_monitoringAndTroubleshooting">/secure/admin/jira/monitoringAndTroubleshooting.jspa
+		</link>
+	</web-item>
+
+	<webwork1 key="flaw-synchronizer-webwork" name="Demo Import Actions"
+		class="java.lang.Object">
+		<actions>
+
+			<action
+				name="com.demo.jira.plugin.server.action.MonitoringAndTroubleshootingAction"
+				alias="monitoringAndTroubleshooting">
+				<view name="monitoringAndTroubleshootingDisplay">/templates/monitoring-and-troubleshooting.vm
+				</view>
+			</action>
+			<action
+					name="com.demo.jira.plugin.server.action.MonitoringAndTroubleshootingAction2"
+					alias="checksuccess">
+				<command name="checksuccess" alias="checksuccess">
+					<view name="success">/templates/monitoring-and-troubleshooting.vm
+					</view>
+				</command>
+			</action>
+
+		</actions>
+	</webwork1>
+	
+
+</atlassian-plugin>

@@ -1,0 +1,16 @@
+<html>
+<head>
+    <meta name="admin.active.section" content="admin_plugins_menu/flaw-sync-web-section"/>
+    <title> Monitoring And Troubleshooting</title>
+    <style>div.noshow { display: none; } </style>
+    $webResourceManager.requireResourcesForContext("monitoringAndTroubleshootingResources-Context")
+</head>
+    <body>
+        <h2> ~~ Jira issue creation through API ~~ </h2><br>
+        <p> Note: Please create a new project with name of 'IN' and create a new user with the name 'admin' before
+        clicking the 'Create an Issue' button </p> <br>
+        <div>
+          <input class="aui-button button" type="button" name="checkSuccess" value="Create an Issue" id="checkSuccess" title="Create an Issue" />
+        </div>
+    </body>
+</html>
